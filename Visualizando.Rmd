@@ -1,0 +1,30 @@
+---
+title: "Resultados"
+output: pdf_document
+date: "2024-07-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Obtenção dos dados
+
+```{r}
+diabetes <- read.csv(file = "C:/Users/Mickael/Downloads/diabetes.csv")
+
+head(diabetes)
+```
+
+#preparação dos dados
+```{r message=FALSE, warning=FALSE}
+diabetes$Outcome <- as.factor(diabetes$Outcome)
+
+
+library(dplyr)
+
+diabetes2 <- diabetes %>%
+  filter(Insulin <= 250)
+
+```
+

@@ -49,4 +49,14 @@ predicoes
 confusionMatrix(predicoes,test$Outcome)
 #pronto agora apenas teste com os novos valores e voce tera o que o modelo pensa de acordo com os dados e que tipo de algoritimo lhe foi estabelecido
 
+#Criando o arquivo com os resultados das predições
+write.csv(predicoes,'resultado.csv')
 
+#Lendo o arquivo de previsões que foi gerado
+resultado.csv <- read.csv('resultado.csv')
+
+#Alterando o nome das colunas do dataframe
+names(resultado.csv) <- c('Indice','Valor previsto')
+
+#Visualizando o dataframe
+resultado.csv
