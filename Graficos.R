@@ -10,7 +10,7 @@ carros <- mtcars[,c(1,2,9)]
 head(carros)
 
 #Histograma
-hist(carros$mpg)
+ 
 
 #Gráfico de dispersão
 plot(carros$mpg,carros$cyl)
